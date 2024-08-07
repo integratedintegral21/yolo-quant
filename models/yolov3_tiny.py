@@ -108,7 +108,7 @@ class Yolov3Tiny(nn.Module):
         return [self.small_obj_out(small_head_output), self.big_obj_out(big_head_output_1)]
 
 
-def load_from_ultralytics_state_dict(model: Yolov3Tiny, path):
+def load_from_ultralytics_state_dict(model, path):
     state_dict = torch.load(path)
     model.backbone[0][0].weight.data = state_dict['model.model.0.conv.weight']    # Conv2d
     model.backbone[0][0].bias.data = state_dict['model.model.0.conv.bias']
@@ -149,4 +149,3 @@ def load_from_ultralytics_state_dict(model: Yolov3Tiny, path):
     model.big_obj_out.weight.data = state_dict['model.model.20.m.1.weight']
     model.big_obj_out.bias.data = state_dict['model.model.20.m.1.bias']
 
-    pass
