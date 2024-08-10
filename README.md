@@ -1,7 +1,7 @@
 # yolo-quant
 Pytorch + Brevitas implementation of yolo models
 
-# Work in progress..
+# Work in progress...
 Features added so far:
 - [x] YoloV3-tiny PyTorch implementation + weights
 - [x] YoloV3-tiny Brevitas implementation 
